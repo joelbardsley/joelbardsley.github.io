@@ -1,3 +1,143 @@
+:root {
+  --font-family-heading: "Libre Baskerville", serif;
+  --font-weight-heading: 700;
+  --font-family-body: "Source Sans 3", sans-serif;
+  --font-weight-body: 400;
+
+  --color-neutral-light: #f6e8ea;
+  --color-neutral-standard: #aa8896;
+  --color-neutral-dark: #22181c;
+  --color-primary-light: #f45b69;
+  --color-primary-standard: #f13030;
+  --color-primary-dark: #5a0001;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: red;
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+  font-size: 1rem;
+  margin: 0;
+}
+
+h1,
+p,
+ul,
+li,
+figure,
+img {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+figure {
+  display: inline-block;
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5em 0.75em;
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-light);
+}
+
+figcaption a {
+  color: var(--color-primary-light);
+}
+
+h1 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: 2.25rem;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+.container {
+  padding-inline: 2em;
+  max-width: 62.5rem;
+  margin-inline: auto;
+}
+
+.social-icon-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 2rem;
+}
+
+.social-icon-list a {
+  padding: 0.5em;
+  color: var(--color-primary-standard);
+  transition: color 0.3s ease;
+}
+
+.social-icon-list a:hover {
+  color: var(--color-primary-light);
+  opacity: 0.8;
+}
+
+main > * + * {
+  margin-top: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 50rem) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 16.25rem;
+    gap: 2em;
+  }
+
+  main {
+    grid-column: 1;
+  }
+
+  aside {
+    grid-row: 1 / -1;
+    grid-column: 2;
+  }
 }
